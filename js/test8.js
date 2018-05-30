@@ -26,8 +26,32 @@
  *  - add(x) = permet d'ajouter la phrase x au vocabulaire du robot
  *  - delete(x) = permet de supprimer la phrase x du vocabulaire
  */
+function createRobot(vocable) {
+  var index = 0;
+  return {
+    say: function(){
+      var mot = vocable[index];
+      index++;
+      if (index >= vocable.length) {
+        index = 0 ;
+      }
+      return mot;
+    },
+    add: function(word){
+      vocable.push(word);
+    },
+    delete: function(word){
+      vocable = vocable.filter(w => w !==word);
+    },
+  };
 
-function createRobot() {}
+}
+
+// var robot = createRobot(['coucou', 'hello']);
+// robot.say();
+// robot.say();
+// robot.say();
+// robot.say();
 
 
 

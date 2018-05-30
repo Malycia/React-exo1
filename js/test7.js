@@ -32,16 +32,24 @@ Array.prototype.sum = function(){
 
 };
 
-Array.prototype.product = function(){
-  var total = 1;
-  var calcul = function(value){
-    total *= value;
-    return total;
-  };
-  this.forEach(calcul);
-  return total;
-
+Array.prototype.product = function() {
+  return this.reduce((cumul, item) => cumul * item, 1);
 };
+
+Array.prototype.divide = function(divider) {
+  return this.map(item => item / divider);
+};
+
+// Array.prototype.product = function(){
+//   var total = 1;
+//   var calcul = function(value){
+//     total *= value;
+//     return total;
+//   };
+//   this.forEach(calcul);
+//   return total;
+//
+// };
 
 // Array.prototype.divide = function(number){
 //   var total = 0;
@@ -55,18 +63,18 @@ Array.prototype.product = function(){
 //   return total;
 //
 // };
-Array.prototype.divide = function(number){
-  var total = [];
-  var calcul = function(value, index){
-    total[index] = value / number;
-    console.log(total);
-    return total[index];
-  };
-  this.forEach(calcul);
-  console.log(total);
-  return total;
-
-};
+// Array.prototype.divide = function(number){
+//   var total = [];
+//   var calcul = function(value, index){
+//     total[index] = value / number;
+//     console.log(total);
+//     return total[index];
+//   };
+//   this.forEach(calcul);
+//   console.log(total);
+//   return total;
+//
+// };
 
 
 
